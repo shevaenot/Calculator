@@ -40,7 +40,7 @@ public class Parse {
         return null;
     }
     
-    public String arabToRomeConvert(Integer num){
+    public String arabToRomeConvert(Integer num) throws CalcException {
         StringBuilder result = new StringBuilder();
         for (int i = 0; i<arabDigit.length; i++){
             while((num - arabDigit[i])>=0){
@@ -54,5 +54,4 @@ public class Parse {
     public boolean checkOperator(String op){
         return "*".equals(op) || "/".equals(op) || "+".equals(op) || "-".equals(op);
     }
-
 }

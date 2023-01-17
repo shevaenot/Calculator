@@ -1,6 +1,5 @@
 import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
 public class Calc {
 
@@ -63,6 +62,10 @@ public class Calc {
 
         if (!(num2>=1 && num2<=10)){
             throw new CalcException("Число #2 должно быть от 1 до 10 или от I до X включительно");
+        }
+
+        if (isRomanExp && calcExp(num1, operation, num2) <= 0) {
+            throw new CalcException("Отрицательный результат или ноль в римских числах  не существует");
         }
 
         int result = calcExp(num1, operation, num2);
